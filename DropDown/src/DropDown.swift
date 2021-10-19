@@ -262,7 +262,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow color automatically reloads the drop down.
 	*/
-	@objc public dynamic var shadowColor = DPDConstant.UI.Shadow.Color {
+	@objc public dynamic var dropDownShadowColor = DPDConstant.UI.Shadow.Color {
 		willSet { tableViewContainer.layer.shadowColor = newValue.cgColor }
 		didSet { reloadAllComponents() }
 	}
@@ -272,7 +272,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow color automatically reloads the drop down.
 	*/
-	@objc public dynamic var shadowOffset = DPDConstant.UI.Shadow.Offset {
+	@objc public dynamic var dropDownShadowOffset = DPDConstant.UI.Shadow.Offset {
 		willSet { tableViewContainer.layer.shadowOffset = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -282,7 +282,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow opacity automatically reloads the drop down.
 	*/
-	@objc public dynamic var shadowOpacity = DPDConstant.UI.Shadow.Opacity {
+	@objc public dynamic var dropDownShadowOpacity = DPDConstant.UI.Shadow.Opacity {
 		willSet { tableViewContainer.layer.shadowOpacity = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -292,7 +292,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow radius automatically reloads the drop down.
 	*/
-	@objc public dynamic var shadowRadius = DPDConstant.UI.Shadow.Radius {
+	@objc public dynamic var dropDownShadowRadius = DPDConstant.UI.Shadow.Radius {
 		willSet { tableViewContainer.layer.shadowRadius = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -546,10 +546,10 @@ private extension DropDown {
 
 		tableViewContainer.layer.masksToBounds = false
 		tableViewContainer.layer.cornerRadius = cornerRadius
-		tableViewContainer.layer.shadowColor = shadowColor.cgColor
-		tableViewContainer.layer.shadowOffset = shadowOffset
-		tableViewContainer.layer.shadowOpacity = shadowOpacity
-		tableViewContainer.layer.shadowRadius = shadowRadius
+		tableViewContainer.layer.shadowColor = dropDownShadowColor.cgColor
+		tableViewContainer.layer.shadowOffset = dropDownShadowOffset
+		tableViewContainer.layer.shadowOpacity = dropDownShadowOpacity
+		tableViewContainer.layer.shadowRadius = dropDownShadowRadius
 
 		tableView.backgroundColor = tableViewBackgroundColor
 		tableView.separatorColor = separatorColor
